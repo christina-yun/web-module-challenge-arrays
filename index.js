@@ -242,7 +242,7 @@ Use the getRandomFlavors function and new arrays below to do the following:
   For example: getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors) might return ["Strawberry Cheesecake", "Eggnog,"..."Chocolate"].
 */
 
-NEW DATA ARRAYS FOR STRETCH 2 ⬇️
+//NEW DATA ARRAYS FOR STRETCH 2 ⬇️
 const newFlavors = [
   "Date night",
   "U.S.S Butterscotch (Stranger Things special)",
@@ -324,8 +324,20 @@ const regionalFlavors = [
 ]
 
 function getRandomFlavors(array1, array2, array3, array4){
-  /*code here*/
+ const bigArray = [...array1, ...array2, ...array3, ...array4];
+ const randomFlavorArray =[];
+
+  for (let i = 0; i < 31; i++){
+    let randomIndex = Math.floor(Math.random()* bigArray.length);
+    randomFlavorArray.push(bigArray[randomIndex]);
+    bigArray.splice(i, 1);
+  }
+  
+  return randomFlavorArray;
 }
+
+console.log('Stretch 2', getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors));
+
 
 
 /* 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 */
