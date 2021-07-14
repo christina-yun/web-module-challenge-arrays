@@ -325,19 +325,17 @@ const regionalFlavors = [
 
 function getRandomFlavors(array1, array2, array3, array4){
  const bigArray = [...array1, ...array2, ...array3, ...array4];
- const randomFlavorArray =[];
+ const giveMeThirtyOne = bigArray.length - 31;
 
-  for (let i = 0; i < 31; i++){
-    let randomIndex = Math.floor(Math.random()* bigArray.length);
-    randomFlavorArray.push(bigArray[randomIndex]);
-    bigArray.splice(i, 1);
-  }
-  
-  return randomFlavorArray;
+  for (let i = 0; i < giveMeThirtyOne; i++){
+  let randomIndex = Math.floor(Math.random()* bigArray.length);
+  bigArray.splice(randomIndex, 1);
+ }
+
+ return bigArray;
 }
 
 console.log('Stretch 2', getRandomFlavors(originalFlavors, newFlavors, seasonalFlavors, regionalFlavors));
-
 
 
 /* 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑🛑🛑🛑🛑🛑 */
